@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WealthPulse Semantic Theme Attributes -->
+    <attr name="colorCanvasBackground" format="color" />
+    <attr name="colorSurfaceBackground" format="color" />
+    <attr name="colorCardBackground" format="color" />
+    <attr name="colorElevatedBackground" format="color" />
+    <attr name="colorInputBackground" format="color" />
+    <attr name="colorBorder" format="color" />
+    <attr name="colorBorderStrong" format="color" />
+    <attr name="colorTextPrimary" format="color" />
+    <attr name="colorTextSecondary" format="color" />
+    <attr name="colorTextMuted" format="color" />
+    <attr name="colorTextDim" format="color" />
+    <attr name="colorAccentBrand" format="color" />
+</resources>

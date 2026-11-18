@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_transactions"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorCanvasBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header & Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash Flow Ledger"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Real-time transaction tracking"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_trans_add_income"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="+ Inflow"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_success"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btn_trans_add_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="- Outflow"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_danger"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+        </LinearLayout>
+
+        <!-- Monthly Balance Summary Banner -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL INFLOW"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.05"
+                        android:textColor="?attr/colorTextMuted" />
+
+                    <TextView
+                        android:id="@+id/tv_ledger_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0.00"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/wealth_green"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL OUTFLOW"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.05"
+                        android:textColor="?attr/colorTextMuted" />
+
+                    <TextView
+                        android:id="@+id/tv_ledger_total_expense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0.00"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/wealth_red"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NET BALANCE"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.05"
+                        android:textColor="?attr/colorTextMuted" />
+
+                    <TextView
+                        android:id="@+id/tv_ledger_net_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0.00"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorAccentBrand"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Segmented Filter Buttons (All, Inflows, Outflows) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btn_filter_all"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="All"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_primary"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btn_filter_income"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Inflows (+)"
+                android:textSize="12sp"
+                android:textColor="?attr/colorTextMuted"
+                android:background="@drawable/btn_ghost"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp" />
+
+            <Button
+                android:id="@+id/btn_filter_expense"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Outflows (-)"
+                android:textSize="12sp"
+                android:textColor="?attr/colorTextMuted"
+                android:background="@drawable/btn_ghost"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Transactions RecyclerView -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_no_transactions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="No transactions found in this view."
+                android:textSize="14sp"
+                android:textColor="?attr/colorTextDim"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

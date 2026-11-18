@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="?attr/colorCardBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp"
+        android:background="@drawable/card_rounded_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_admin_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Doe"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:id="@+id/tv_admin_user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="john@example.com"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_role_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USER"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorAccentBrand"
+                android:background="@drawable/badge_blue"
+                android:layout_marginEnd="8dp" />
+
+            <ImageView
+                android:id="@+id/btn_delete_user"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_delete"
+                android:padding="3dp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_user_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incomes: 4 • Expenses: 12 • Habits: 3 • Goals: 2"
+            android:textSize="11sp"
+            android:textColor="?attr/colorTextDim"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btn_toggle_role"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Make Admin"
+            android:textSize="11sp"
+            android:textColor="?attr/colorTextPrimary"
+            android:background="@drawable/btn_ghost"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

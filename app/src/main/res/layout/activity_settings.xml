@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="?attr/colorCanvasBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header & Back -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back_settings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_transactions"
+                android:rotation="180"
+                android:padding="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="12dp"
+                app:tint="?attr/colorTextPrimary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account &amp; Settings"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage profile, preferences &amp; themes"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 1. Appearance / Theme Selection Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appearance Theme"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select your desired color theme"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:layout_marginBottom="12dp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_themes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rb_theme_slate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dark Slate (Refined &amp; Modern Dark)"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_theme_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Clean Light (Crisp &amp; Minimalist Light)"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_theme_indigo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Executive Indigo (Midnight Navy &amp; Violet)"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="14sp" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 2. Profile Information Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Details"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your personal account information"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:layout_marginBottom="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/et_settings_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/et_settings_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/et_settings_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="14dp" />
+
+                <Button
+                    android:id="@+id/btn_save_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Save Profile Information"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_success" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 3. Financial Preferences Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Financial Preferences"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Currency and monthly targets"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:layout_marginBottom="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default Currency"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:layout_marginBottom="4dp" />
+
+                <Spinner
+                    android:id="@+id/sp_settings_currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Income Target"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorTextSecondary"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/et_settings_income_target"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:textColor="?attr/colorTextPrimary"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Savings Target"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorTextSecondary"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/et_settings_savings_target"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:textColor="?attr/colorTextPrimary"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_save_preferences"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Save Financial Targets"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_primary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 4. Security & Password Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Security"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update your account password"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btn_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Change Password"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:background="@drawable/btn_ghost" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 5. Delete Account Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardBackground"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_rounded_background">
+
+                <Button
+                    android:id="@+id/btn_delete_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Delete WealthPulse Account"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_danger" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

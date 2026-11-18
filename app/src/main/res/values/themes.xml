@@ -1,0 +1,88 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base Theme -->
+    <style name="Base.Theme.WealthPulse" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorSurfaceBackground</item>
+        <item name="android:navigationBarColor">?attr/colorSurfaceBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowBackground">?attr/colorCanvasBackground</item>
+        <!-- Text Selection & Context Menu Fixes -->
+        <item name="android:textColorHighlight">#663B82F6</item>
+        <item name="colorControlActivated">?attr/colorAccentBrand</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">?attr/colorSurfaceBackground</item>
+        <item name="actionMenuTextColor">?attr/colorTextPrimary</item>
+    </style>
+
+    <!-- 1. Dark Slate Theme (Default) -->
+    <style name="Theme.WealthPulse.DarkSlate" parent="Base.Theme.WealthPulse">
+        <item name="colorPrimary">@color/slate_accent</item>
+        <item name="colorSecondary">@color/wealth_cyan</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:textColorHighlight">#663B82F6</item>
+
+        <item name="colorCanvasBackground">@color/slate_bg_canvas</item>
+        <item name="colorSurfaceBackground">@color/slate_bg_surface</item>
+        <item name="colorCardBackground">@color/slate_bg_card</item>
+        <item name="colorElevatedBackground">@color/slate_bg_elevated</item>
+        <item name="colorInputBackground">@color/slate_bg_input</item>
+        <item name="colorBorder">@color/slate_border</item>
+        <item name="colorBorderStrong">@color/slate_border_strong</item>
+        <item name="colorTextPrimary">@color/slate_text_primary</item>
+        <item name="colorTextSecondary">@color/slate_text_secondary</item>
+        <item name="colorTextMuted">@color/slate_text_muted</item>
+        <item name="colorTextDim">@color/slate_text_dim</item>
+        <item name="colorAccentBrand">@color/slate_accent</item>
+    </style>
+
+    <!-- 2. Clean Light Theme -->
+    <style name="Theme.WealthPulse.CleanLight" parent="Base.Theme.WealthPulse">
+        <item name="colorPrimary">@color/light_accent</item>
+        <item name="colorSecondary">@color/wealth_cyan</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:textColorHighlight">#442563EB</item>
+
+        <item name="colorCanvasBackground">@color/light_bg_canvas</item>
+        <item name="colorSurfaceBackground">@color/light_bg_surface</item>
+        <item name="colorCardBackground">@color/light_bg_card</item>
+        <item name="colorElevatedBackground">@color/light_bg_elevated</item>
+        <item name="colorInputBackground">@color/light_bg_input</item>
+        <item name="colorBorder">@color/light_border</item>
+        <item name="colorBorderStrong">@color/light_border_strong</item>
+        <item name="colorTextPrimary">@color/light_text_primary</item>
+        <item name="colorTextSecondary">@color/light_text_secondary</item>
+        <item name="colorTextMuted">@color/light_text_muted</item>
+        <item name="colorTextDim">@color/light_text_dim</item>
+        <item name="colorAccentBrand">@color/light_accent</item>
+    </style>
+
+    <!-- 3. Executive Indigo Theme -->
+    <style name="Theme.WealthPulse.ExecutiveIndigo" parent="Base.Theme.WealthPulse">
+        <item name="colorPrimary">@color/indigo_accent</item>
+        <item name="colorSecondary">@color/wealth_purple</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:textColorHighlight">#666366F1</item>
+
+        <item name="colorCanvasBackground">@color/indigo_bg_canvas</item>
+        <item name="colorSurfaceBackground">@color/indigo_bg_surface</item>
+        <item name="colorCardBackground">@color/indigo_bg_card</item>
+        <item name="colorElevatedBackground">@color/indigo_bg_elevated</item>
+        <item name="colorInputBackground">@color/indigo_bg_input</item>
+        <item name="colorBorder">@color/indigo_border</item>
+        <item name="colorBorderStrong">@color/indigo_border_strong</item>
+        <item name="colorTextPrimary">@color/indigo_text_primary</item>
+        <item name="colorTextSecondary">@color/indigo_text_secondary</item>
+        <item name="colorTextMuted">@color/indigo_text_muted</item>
+        <item name="colorTextDim">@color/indigo_text_dim</item>
+        <item name="colorAccentBrand">@color/indigo_accent</item>
+    </style>
+
+    <!-- Default Theme Alias -->
+    <style name="Theme.FinancialTracker" parent="Theme.WealthPulse.DarkSlate" />
+
+    <!-- Bottom Navigation Bar Text Style (Ensures zero truncation across all device scales) -->
+    <style name="BottomNavText" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:textSize">10.5sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Financial Status & Highlights -->
+    <color name="wealth_blue">#3B82F6</color>
+    <color name="wealth_blue_dark">#1D4ED8</color>
+    <color name="wealth_blue_light">#1A3B82F6</color>
+    <color name="wealth_cyan">#0EA5E9</color>
+    
+    <color name="wealth_green">#10B981</color>
+    <color name="wealth_green_dark">#059669</color>
+    <color name="wealth_green_light">#1A10B981</color>
+
+    <color name="wealth_red">#F43F5E</color>
+    <color name="wealth_red_dark">#E11D48</color>
+    <color name="wealth_red_light">#1AF43F5E</color>
+
+    <color name="wealth_amber">#F59E0B</color>
+    <color name="wealth_amber_dark">#D97706</color>
+    <color name="wealth_amber_light">#1AF59E0B</color>
+
+    <color name="wealth_purple">#8B5CF6</color>
+    <color name="wealth_purple_dark">#7C3AED</color>
+    <color name="wealth_purple_light">#1A8B5CF6</color>
+
+    <color name="wealth_indigo">#6366F1</color>
+    <color name="wealth_indigo_dark">#4F46E5</color>
+    <color name="wealth_indigo_light">#1A6366F1</color>
+
+    <!-- Theme 1: Dark Slate (Default Modern Dark) -->
+    <color name="slate_bg_canvas">#0B0F19</color>
+    <color name="slate_bg_surface">#111827</color>
+    <color name="slate_bg_card">#1E293B</color>
+    <color name="slate_bg_elevated">#334155</color>
+    <color name="slate_bg_input">#111827</color>
+    <color name="slate_border">#293548</color>
+    <color name="slate_border_strong">#3B4A62</color>
+    <color name="slate_text_primary">#F9FAFB</color>
+    <color name="slate_text_secondary">#D1D5DB</color>
+    <color name="slate_text_muted">#9CA3AF</color>
+    <color name="slate_text_dim">#6B7280</color>
+    <color name="slate_accent">#3B82F6</color>
+
+    <!-- Theme 2: Clean Light (Crisp Minimalist) -->
+    <color name="light_bg_canvas">#F8FAFC</color>
+    <color name="light_bg_surface">#FFFFFF</color>
+    <color name="light_bg_card">#FFFFFF</color>
+    <color name="light_bg_elevated">#F1F5F9</color>
+    <color name="light_bg_input">#FFFFFF</color>
+    <color name="light_border">#E2E8F0</color>
+    <color name="light_border_strong">#CBD5E1</color>
+    <color name="light_text_primary">#0F172A</color>
+    <color name="light_text_secondary">#334155</color>
+    <color name="light_text_muted">#64748B</color>
+    <color name="light_text_dim">#94A3B8</color>
+    <color name="light_accent">#2563EB</color>
+
+    <!-- Theme 3: Executive Indigo (Deep Midnight Royal) -->
+    <color name="indigo_bg_canvas">#0A0D1A</color>
+    <color name="indigo_bg_surface">#0F1326</color>
+    <color name="indigo_bg_card">#171D38</color>
+    <color name="indigo_bg_elevated">#222B52</color>
+    <color name="indigo_bg_input">#0F1326</color>
+    <color name="indigo_border">#232B4E</color>
+    <color name="indigo_border_strong">#333E6D</color>
+    <color name="indigo_text_primary">#F8FAFC</color>
+    <color name="indigo_text_secondary">#CBD5E1</color>
+    <color name="indigo_text_muted">#94A3B8</color>
+    <color name="indigo_text_dim">#64748B</color>
+    <color name="indigo_accent">#6366F1</color>
+</resources>

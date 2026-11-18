@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_goals"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorCanvasBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Page Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Savings Goals"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorTextPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Milestone targets &amp; sinking funds"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorTextMuted" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_create_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="+ New Goal"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_primary"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+            </LinearLayout>
+
+            <!-- Quick Goal Presets Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceBackground"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp"
+                    android:background="@drawable/card_rounded_background">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Goal Templates (1-Tap Setup):"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorTextMuted"
+                        android:layout_marginBottom="8dp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn_goal_tpl_emergency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="🛡️ Emergency Fund (₹1,50,000)"
+                                android:textSize="11sp"
+                                android:textColor="?attr/colorTextSecondary"
+                                android:background="@drawable/btn_ghost"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <Button
+                                android:id="@+id/btn_goal_tpl_vacation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="✈️ Vacation Fund (₹60,000)"
+                                android:textSize="11sp"
+                                android:textColor="?attr/colorTextSecondary"
+                                android:background="@drawable/btn_ghost"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <Button
+                                android:id="@+id/btn_goal_tpl_tech"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="💻 Tech Upgrades (₹90,000)"
+                                android:textSize="11sp"
+                                android:textColor="?attr/colorTextSecondary"
+                                android:background="@drawable/btn_ghost"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <Button
+                                android:id="@+id/btn_goal_tpl_vehicle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="🚗 Vehicle Fund (₹2,00,000)"
+                                android:textSize="11sp"
+                                android:textColor="?attr/colorTextSecondary"
+                                android:background="@drawable/btn_ghost"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Goals List -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVE SAVINGS GOALS"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:textColor="?attr/colorTextMuted"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_all_goals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/tv_no_goals_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="No active savings goals. Tap + New Goal to define targets!"
+                android:textSize="13sp"
+                android:textColor="?attr/colorTextDim"
+                android:visibility="gone"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

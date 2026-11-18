@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base Night Application Theme -->
+    <style name="Theme.FinancialTracker" parent="Theme.WealthPulse.DarkSlate" />
+</resources>
